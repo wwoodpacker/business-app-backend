@@ -25,6 +25,8 @@ public class Main {
 
   public static void main(String[] args) {
 
+    new CardController(new CardService());
+
     port(Integer.valueOf(System.getenv("PORT")));
     staticFileLocation("/public");
 
@@ -88,6 +90,8 @@ public class Main {
         if (connection != null) try{connection.close();} catch(SQLException e){}
       }
     }, new FreeMarkerEngine());
+
+
 
     get("/общественная-приемная", (request, response) -> {
       Map<String, Object> attributes = new HashMap<>();
