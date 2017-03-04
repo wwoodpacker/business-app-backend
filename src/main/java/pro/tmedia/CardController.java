@@ -4,12 +4,16 @@ package pro.tmedia; /**
 import spark.Spark;
 
 import static pro.tmedia.JsonUtil.*;
+import static spark.Spark.after;
+import static spark.Spark.get;
 
 public class CardController {
 
     public CardController(final CardService cardService) {
 
-        Spark.get("/cards", (req, res) -> cardService.getAllCards(), JsonUtil.json());
-
+        get("/cards", (req, res) -> cardService.getAllCards(), JsonUtil.json());
+        after((req, res) -> {
+            res.type("application/json");
+        });
     }
 }

@@ -17,10 +17,10 @@ public class Main {
 
   public static void main(String[] args) {
 
-    new CardController(new CardService());
-
     port(Integer.valueOf(System.getenv("PORT")));
     staticFileLocation("/public");
+
+    new CardController(new CardService());
 
     get("/is-server-available-status", (request, response) -> {
             Map<String, Object> attributes = new HashMap<>();
