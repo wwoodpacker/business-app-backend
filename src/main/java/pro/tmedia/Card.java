@@ -1,3 +1,5 @@
+package pro.tmedia;
+
 /**
  * Created by TIvaykin on 04.03.2017.
  */
