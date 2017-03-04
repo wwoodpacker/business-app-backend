@@ -8,7 +8,7 @@ import java.util.List;
  */
 public class CardService {
     List<Card> allCards = new ArrayList<>();
-    CardService() {
+    public CardService() {
         int id = 0;
         Card card;
 
