@@ -7,6 +7,7 @@ import static spark.Spark.*;
 
 import pro.tmedia.CardController;
 import pro.tmedia.CardService;
+import pro.tmedia.JsonUtil;
 import spark.template.freemarker.FreeMarkerEngine;
 import spark.ModelAndView;
 import static spark.Spark.get;
@@ -22,12 +23,14 @@ public class Main {
 
     new CardController(new CardService());
 
-    get("/is-server-available-status", (request, response) -> {
+    /*get("/is-server-available-status", (request, response) -> {
             Map<String, Object> attributes = new HashMap<>();
             attributes.put("message", "Server is available!");
 
             return new ModelAndView(attributes, "index.ftl");
-        }, new FreeMarkerEngine());
+        }, new FreeMarkerEngine());*/
+
+    get("/cards", (req, res) -> "Server is available!", JsonUtil.json());
 
 
     get("/depot", (req, res) -> {
