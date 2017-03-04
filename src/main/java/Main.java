@@ -28,9 +28,9 @@ public class Main {
     port(Integer.valueOf(System.getenv("PORT")));
     staticFileLocation("/public");
 
-    get("/hello-world", (request, response) -> {
+    get("/is-server-available-status", (request, response) -> {
             Map<String, Object> attributes = new HashMap<>();
-            attributes.put("message", "Hello World!");
+            attributes.put("message", "Server is available!");
 
             return new ModelAndView(attributes, "index.ftl");
         }, new FreeMarkerEngine());
