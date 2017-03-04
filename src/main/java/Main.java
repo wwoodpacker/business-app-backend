@@ -30,7 +30,7 @@ public class Main {
             return new ModelAndView(attributes, "index.ftl");
         }, new FreeMarkerEngine());*/
 
-    get("/cards", (req, res) -> "Server is available!", JsonUtil.json());
+    get("/is-server-available-status", (req, res) -> "Server is available!", JsonUtil.json());
 
 
     get("/depot", (req, res) -> {
