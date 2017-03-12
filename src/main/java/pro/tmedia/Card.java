@@ -9,6 +9,16 @@ public class Card {
     private String description;
     private String conditions;
     private String contacts;
+    private String type;
+    private String city;
+    public enum types {
+        grant,
+        event,
+        debt
+    }
+    public enum cities {
+        khabarovsk
+    }
 
     public int getId() {
         return id;
@@ -48,5 +58,35 @@ public class Card {
 
     public void setContacts(String contacts) {
         this.contacts = contacts;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(types type) {
+        switch (type) {
+            case debt:
+                this.type = "debt";
+                break;
+            case event:
+                this.type = "event";
+                break;
+            case grant:
+                this.type = "grant";
+                break;
+        }
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(cities city) {
+        switch (city) {
+            case khabarovsk:
+                this.type = "khabarovsk";
+                break;
+        }
     }
 }

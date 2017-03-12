@@ -20,7 +20,7 @@ public class CardService {
                         "E-MAIL: K932526@GMAIL.COM\n" +
                         "ТЕЛ.: +7(4212) 93-25-26\n" +
                         "           +7(4212) 30-91-69\n" +
-                        "http://molpred27.ru/about\n");
+                        "http://molpred27.ru/about\n", Card.types.event);
 
 
         createCard("ПРОГРАММА \"ПРЕАКТУМ\"",
@@ -29,7 +29,7 @@ public class CardService {
                 "Г. Москва, Ленинградский проспект 31А/1\n" +
                         "E-MAIL: info@preactum.ru\n" +
                         "ТЕЛ.: +7 (495) 150-40-74     \n" +
-                        "http://preactum.ru/about/\n");
+                        "http://preactum.ru/about/\n", Card.types.event);
         createCard("Грант от КЦСП",
                 "Сумма субсидии (гранта) составляет не более 300 тыс. рублей на одного начинающего субъекта малого предпринимательства – получателя субсидии (гранта). Субсидии (гранты) предоставляются при условии софинансирования начинающим субъектом малого предпринимательства расходов на реализацию бизнес-проекта в размере не менее 15 процентов от суммы получаемой субсидии (гранта), которые не подлежит возмещению.",
                 "· заявка на получение государственной поддержки; \n" +
@@ -48,7 +48,7 @@ public class CardService {
                         "Адрес: 680030, Хабаровск, ул. Дзержинского, 41\n" +
                         "Время работы: 9:00 – 18:00 (обед с 13:00 до 14:00), выходной суббота и воскресенье\n" +
                         "телефон/факс: +7 (4212) 47-44-20\n" +
-                        "http://www.kcsp27.ru/services/Grantynachinayushchimpredprinimatelyam/\n");
+                        "http://www.kcsp27.ru/services/Grantynachinayushchimpredprinimatelyam/\n", Card.types.grant);
         createCard("Грант \"Молодежный бизнес проект\"",
                 "Участниками конкурса являются\n" +
                         "1. Субъекты малого и среднего предпринимательства, осуществляющие свою предпринимательскую деятельность на территории города Хабаровска, учредителями которых являются жители города Хабаровска в возрасте до 30 лет включительно.\n" +
@@ -67,7 +67,7 @@ public class CardService {
                         "- справку из банка, подтверждающую наличие расчетного счета;\n" +
                         "- бизнес-план проекта, по которому ранее не был предоставлен грант, субсидия либо премия за победу в аналогичном конкурсе, проводимом администрацией города Хабаровска.\n",
                 "Заявки для участия в конкурсе претенденты подают в управление по делам молодежи и социальным вопросам администрации города Хабаровска по адресу: 680013, г. Хабаровск, ул. Ленинградская, д. 30 каб. 206 (тел.: 40-89-94).\n" +
-                        "http://www.svoedelo27.ru/news/administraciya-goroda-habarovska-obyavlyaet-o-nachale-priema-dokumentov-na-uchastie-v-konkurse\n");
+                        "http://www.svoedelo27.ru/news/administraciya-goroda-habarovska-obyavlyaet-o-nachale-priema-dokumentov-na-uchastie-v-konkurse\n", Card.types.grant);
         createCard("Название: Микрозаем \"СТАРТ\"",
                 "•\tДля начинающего бизнеса\n" +
                         "•\tСрок до 36 месяцев\n" +
@@ -82,14 +82,14 @@ public class CardService {
                         "Email: mail@fond27.ru\n" +
                         "Горячая линия о мерах поддержки предпринимателей:\n" +
                         "8 800 000 00 00 (звонок бесплатный)\n" +
-                        "http://www.fond27.ru/conditions/13/\n");
-        createCard("",
+                        "http://www.fond27.ru/conditions/13/\n", Card.types.debt);
+        /*createCard("",
                 "",
                 "",
-                "");
+                "");*/
     }
 
-    private void createCard(String name, String description, String conditions, String contacts) {
+    private void createCard(String name, String description, String conditions, String contacts, Card.types type) {
         Card card;
         card = new Card();
         card.setId(id++);
@@ -97,6 +97,8 @@ public class CardService {
         card.setDescription(description);
         card.setConditions(conditions);
         card.setContacts(contacts);
+        card.setCity(Card.cities.khabarovsk);
+        card.setType(type);
         allCards.add(card);
     }
 
