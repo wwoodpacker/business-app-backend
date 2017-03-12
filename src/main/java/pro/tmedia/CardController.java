@@ -53,5 +53,16 @@ public class CardController {
                 if (connection != null) try{connection.close();} catch(SQLException e){}
             }
         }, new FreeMarkerEngine());
+
+
+        get("/cardComments", (req, res) -> "<div id=\"fb-root\"></div>\n" +
+                "<script>(function(d, s, id) {\n" +
+                "  var js, fjs = d.getElementsByTagName(s)[0];\n" +
+                "  if (d.getElementById(id)) return;\n" +
+                "  js = d.createElement(s); js.id = id;\n" +
+                "  js.src = \"//connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.8&appId=1320619968005786\";\n" +
+                "  fjs.parentNode.insertBefore(js, fjs);\n" +
+                "}(document, 'script', 'facebook-jssdk'));</script>" +
+                "<div class=\"fb-comments\" data-href=\"https://developers.facebook.com/docs/plugins/comments#configurator\" data-numposts=\"5\"></div>");
     }
 }
