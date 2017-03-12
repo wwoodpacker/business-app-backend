@@ -63,7 +63,7 @@ public class CardController {
                 "  js.src = \"//connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.8&appId=1320619968005786\";\n" +
                 "  fjs.parentNode.insertBefore(js, fjs);\n" +
                 "}(document, 'script', 'facebook-jssdk'));</script>" +
-                "<div class=\"fb-like\" data-href=\"https://developers.facebook.com/docs/plugins/\" data-layout=\"standard\" data-action=\"like\" data-size=\"small\" data-show-faces=\"true\" data-share=\"true\"></div>" +
-                "<div class=\"fb-comments\" data-href=\"https://developers.facebook.com/docs/plugins/comments#configurator\" data-numposts=\"5\"></div>");
+                "<div class=\"fb-like\" data-href=\"http://business-app-backend.herokuapp.com/card/" + req.params("card_id") + "\" data-layout=\"standard\" data-action=\"like\" data-size=\"small\" data-show-faces=\"true\" data-share=\"true\"></div>" +
+                "<div class=\"fb-comments\" data-href=\"http://business-app-backend.herokuapp.com/card/" + req.params("card_id") + "\" data-numposts=\"5\"></div>");
     }
 }
