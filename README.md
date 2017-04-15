@@ -1,6 +1,6 @@
-# java-getting-started
+# business-app-backend
 
-A barebones Java app, which can easily be deployed to Heroku.
+A business-app-backend Java app, which can easily be deployed to Heroku.
 
 This application support the [Getting Started with Java on Heroku](https://devcenter.heroku.com/articles/getting-started-with-java) article - check it out.
 
