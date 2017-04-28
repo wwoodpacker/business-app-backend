@@ -10,7 +10,7 @@
 
 <div class="container">
 
-  <h1>Формируем склад</h1>
+  <h1>Формируем склаcccд</h1>
     <ul>
     <#list results as x>
       <li> ${x} </li>
