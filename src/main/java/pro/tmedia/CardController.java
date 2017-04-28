@@ -28,13 +28,17 @@ public class CardController {
             return cardService.getAllCards();
         }, JsonUtil.json());
 
-        post("/cards", (req, res) -> CardService.createCard2(
-        req.queryParams("name"),
-        req.queryParams("description"),
-        req.queryParams("conditions"),
-        req.queryParams("contacts"),
-        req.queryParams("event"))
-        ,JsonUtil.json());
+        post("/newcard", (req, res) -> {
+            CardService.createCard2(
+                    req.queryParams("name"),
+                    req.queryParams("description"),
+                    req.queryParams("conditions"),
+                    req.queryParams("contacts"),
+                    req.queryParams("event"));
+            return cardService.getAllCards();
+        }
+        ,json());
+        
         get("/cardsCRUD", (req, res) -> {
             Connection connection = null;
             Map<String, Object> attributes = new HashMap<>();

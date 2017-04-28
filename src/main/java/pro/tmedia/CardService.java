@@ -101,7 +101,7 @@ public class CardService {
         card.setType(type);
         allCards.add(card);
     }
-  public void createCard2(String name, String description, String conditions, String contacts, String type) {
+  static public void createCard2(String name, String description, String conditions, String contacts, String type) {
         Card card;
         card = new Card();
         card.setId(id++);
