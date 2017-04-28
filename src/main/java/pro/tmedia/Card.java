@@ -77,7 +77,9 @@ public class Card {
                 break;
         }
     }
-
+ public void setType(String type){
+     this.type=type;
+ }
     public String getCity() {
         return city;
     }

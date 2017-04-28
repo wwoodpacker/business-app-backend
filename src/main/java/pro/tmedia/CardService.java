@@ -89,7 +89,7 @@ public class CardService {
                 "");*/
     }
 
-    private void createCard(String name, String description, String conditions, String contacts, Card.types type) {
+    public void createCard(String name, String description, String conditions, String contacts, Card.types type) {
         Card card;
         card = new Card();
         card.setId(id++);
@@ -101,7 +101,18 @@ public class CardService {
         card.setType(type);
         allCards.add(card);
     }
-
+  public void createCard2(String name, String description, String conditions, String contacts, String type) {
+        Card card;
+        card = new Card();
+        card.setId(id++);
+        card.setName(name);
+        card.setDescription(description);
+        card.setConditions(conditions);
+        card.setContacts(contacts);
+        card.setCity(Card.cities.khabarovsk);
+        card.setType(type);
+        allCards.add(card);
+    }
     // returns a list of all users
     public List<Card> getAllCards() {
         return allCards;

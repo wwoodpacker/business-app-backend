@@ -17,6 +17,7 @@ import java.util.Map;
 import static pro.tmedia.JsonUtil.*;
 import static spark.Spark.after;
 import static spark.Spark.get;
+import static spark.Spark.post;
 
 public class CardController {
 
@@ -27,7 +28,13 @@ public class CardController {
             return cardService.getAllCards();
         }, JsonUtil.json());
 
-
+        post("/cards", (req, res) -> CardService.createCard2(
+        req.queryParams("name"),
+        req.queryParams("description"),
+        req.queryParams("conditions"),
+        req.queryParams("contacts"),
+        req.queryParams("event"))
+        ,JsonUtil.json());
         get("/cardsCRUD", (req, res) -> {
             Connection connection = null;
             Map<String, Object> attributes = new HashMap<>();
